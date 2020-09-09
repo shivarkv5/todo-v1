@@ -1,0 +1,27 @@
+<%- include("header") %>
+
+    <div class="box" , id="heading">
+        <h1>
+            <%= kindOfDay %>
+        </h1>
+    </div>
+
+    <div class="box">
+
+        <% for( let i = 0; i < todo.length; i++ ) { %>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%= todo[i] %>
+                </p>
+            </div>
+            <% } %>
+
+                <!-- 3. When User adds new item, the value is stored in todo and post request is triggered to Home route and will be caught at " app.post('/') "-->
+                <form class="item" action="/" method="post">
+                    <input type="text" name="todo" placeholder="add todo" autocomplete="off">
+                    <button type="submit" value=<%=kindOfDay %> name="List"> +</button>
+                </form>
+    </div>
+
+    <%- include("footer") %>
